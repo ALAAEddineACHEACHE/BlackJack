@@ -3,9 +3,12 @@
     width: 75%;
     margin:0 auto;
     text-align: center;
+   background-color: black;
+  
 }
+
 .flex-blackjack-row-1,.flex-blackjack-row-2{
-    color:#cc5757;
+    color:black;
     background:url('background.jpg') center;
 }
 .flex-blackjack-row-1,.flex-blackjack-row-2,.flex-blackjack-row-3{
