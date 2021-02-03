@@ -1,7 +1,7 @@
 let blackJackGame = {
 'you': {'scoreSpan': '#your-blackjack-result', 'div' : '#your-box' ,'score' :0 },
 'dealer':{'scoreSpan' : '#dealer-blackjack-result' ,'div': '#dealer-box','score':0},
-'cardsMap':{'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'A':[1,11],'A10':[11,21],'AJ':[11,21],'AK':[11,21]},
+'cards':{'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'11':11,'12':12},
 };  
 const YOU = blackJackGame['you']
 const DEALER = blackJackGame['dealer']
@@ -10,13 +10,18 @@ const removeSound = new Audio('assets/sounds/2.mp3');
 document.querySelector("#blackjack-hit-button").addEventListener('click',blackJackHit);
 document.querySelector("#blackjack-deal-button").addEventListener('click',blackJackDeal);
 function blackJackHit(){
-    showCard(DEALER);
-    showCard(YOU);
+    let card = randomCard();
+    console.log(card);
+    showCard(card,YOU);
+}
+function randomCard(){
+    let randomIndex = Math.floor(Math.random()*13);
+    return blackJackGame['cards'][randomIndex];
 }
 
-function showCard(activePlayer){
+function showCard(card,activePlayer){
     let cardImage = document.createElement('img');
-    cardImage.src = `assets/images/2.jpg`;
+    cardImage.src = `assets/images/${card}.jpg`;
     hitSound.play();
     document.querySelector(activePlayer['div']).appendChild(cardImage);
 
@@ -33,6 +38,7 @@ function blackJackDeal(){
         dealerImages[i].remove();
         removeSound.play();
     }
-   
+    
 
 }
+
