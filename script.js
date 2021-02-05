@@ -13,6 +13,8 @@ function blackJackHit(){
     let card = randomCard();
     console.log(card);
     showCard(card,YOU);
+    updateScore(card,YOU);
+    showScore(YOU);
 }
 function randomCard(){
     let randomIndex = Math.floor(Math.random()*13);
@@ -41,3 +43,14 @@ function blackJackDeal(){
     
 
 }
+function updateScore(card,activePlayer){
+    activePlayer['score']+=blackJackGame['cards'];
+    
+}
+function showScore(activePlayer){
+    document.querySelector(activePlayer['scoreSpan']).textContent=activePlayer['score'];
+}
+
+
+
+    
