@@ -9,12 +9,13 @@ const hitSound = new Audio('assets/sounds/1.mp3');
 const removeSound = new Audio('assets/sounds/2.mp3'); 
 document.querySelector("#blackjack-hit-button").addEventListener('click',blackJackHit);
 document.querySelector("#blackjack-deal-button").addEventListener('click',blackJackDeal);
+//User's Shot
 function blackJackHit(){
     let card = randomCard();
     console.log(card);
     showCard(card,YOU);
     updateScore(card,YOU);
-    showScore(YOU);
+    showScore(YOU,DEALER);
 }
 function randomCard(){
     let randomIndex = Math.floor(Math.random()*13);
@@ -28,7 +29,7 @@ function showCard(card,activePlayer){
     document.querySelector(activePlayer['div']).appendChild(cardImage);
 
 }
-
+//Machine's Shot
 function blackJackDeal(){
     let yourImages = document.querySelector('#your-box').querySelectorAll('img');
     let dealerImages = document.querySelector("#dealer-box").querySelectorAll('img');
