@@ -1,7 +1,7 @@
 let blackJackGame = {
 'you': {'scoreSpan': '#your-blackjack-result', 'div' : '#your-box' ,'score' :0 },
 'dealer':{'scoreSpan' : '#dealer-blackjack-result' ,'div': '#dealer-box','score':0},
-'cards':{'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'11':11,'12':12}
+'cardsM':{'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'11':11,'12':12}
 };  
 const YOU = blackJackGame['you'];
 const DEALER = blackJackGame['dealer'];
@@ -18,7 +18,7 @@ function blackJackHit(){
 }
 function randomCard(){
     let randomIndex = Math.floor(Math.random()*13);
-    return blackJackGame['cards'][randomIndex];
+    return blackJackGame['cardsM'][randomIndex];
 }
 
 function showCard(card,activePlayer){
@@ -40,14 +40,12 @@ function blackJackDeal(){
         dealerImages[i].remove();
         removeSound.play();
     }
-    
-
 }
-function updateScore(card,activePlayer){
-    activePlayer['score']+=blackJackGame['cards'];
+function updateScore(card,activePlayer) {
+    activePlayer['score']+=blackJackGame['cardsM'];
     
 }
-function showScore(activePlayer){
+function showScore(activePlayer) {
     document.querySelector(activePlayer['scoreSpan']).textContent=activePlayer['score'];
 }
 
