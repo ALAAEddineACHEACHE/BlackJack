@@ -43,7 +43,7 @@ function blackJackDeal(){
     }
 }
 function updateScore(card,activePlayer) {
-    activePlayer['score']+=blackJackGame['cardsM'];
+    activePlayer['score']+=blackJackGame['cards'];
     
 }
 function showScore(activePlayer) {
