@@ -36,7 +36,6 @@ function showCard(card, activePlayer) {
 function blackJackDeal() {
     let winner = computeWinner();
     showResult(winner);
-    computeWinner();
     let yourImages = document.querySelector('#your-box').querySelectorAll('img');
     let dealerImages = document.querySelector("#dealer-box").querySelectorAll('img');
     for (i = 0; i < yourImages.length; i++) {
@@ -101,20 +100,20 @@ function computeWinner(){
 }
 // Show Results for the winner 
 function showResult(winner) {
-    let message,messageColor;   
+    let message,messagecolor;   
     if(winner === YOU){
         message="You win";
-        messageColor = '#FF00004';
+        messagecolor = "red";
         winSound.play();
     }else if(winner === DEALER){
         message = "You lost";
-        messageColor = '#FF0000';
+        messagecolor = "black";
         losingSound.play();
     }else{
         message = "You draw";
-        messageColor = 'yellow';
+        messagecolor = "yellow";
     }
     document.querySelectorAll('#blackjack-result').textContent=message;
-    document.querySelectorAll('#your-blackjack-result').style.color=messageColor;
+    
 
 }
