@@ -107,13 +107,14 @@ function showResult(winner) {
         winSound.play();
     }else if(winner === DEALER){
         message = "You lost";
-        messagecolor = "black";
+        messagecolor = "blue";
         losingSound.play();
     }else{
         message = "You draw";
         messagecolor = "yellow";
     }
-    document.querySelectorAll('#blackjack-result').textContent=message;
-    
+    document.querySelector("#blackjack-result").textContent=message;
+    document.querySelector("#blackjack-result").style.color=messagecolor;
+        
 
 }
