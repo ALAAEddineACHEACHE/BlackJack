@@ -7,7 +7,7 @@ const YOU = blackJackGame['you'];
 const DEALER = blackJackGame['dealer'];
 const hitSound = new Audio('swish.mp3');
 const removeSound = new Audio('Retrieve.mp3');
-const winSound = new Audio('Winning.mp3');
+const winSound = new Audio('winning.mp3');
 const losingSound = new Audio('losing.mp3');
 const DrawSound = new Audio("draw.mp3");
 document.querySelector("#blackjack-hit-button").addEventListener('click', blackJackHit);
