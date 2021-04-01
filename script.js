@@ -5,9 +5,9 @@ let blackJackGame = {
 };
 const YOU = blackJackGame['you'];
 const DEALER = blackJackGame['dealer'];
-const hitSound = new Audio('assets/sounds/swish.mp3');
-const removeSound = new Audio('assets/sounds/Retrieve.mp3');
-const winSound = new Audio('assets/sounds/Winning.mp3');
+const hitSound = new Audio('swish.mp3');
+const removeSound = new Audio('Retrieve.mp3');
+const winSound = new Audio('Winning.mp3');
 const losingSound = new Audio('assets/sounds/losing.mp3');
 document.querySelector("#blackjack-hit-button").addEventListener('click', blackJackHit);
 document.querySelector("#blackjack-stand-button").addEventListener('click',DealerLogic);      
