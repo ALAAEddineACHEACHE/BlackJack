@@ -5,10 +5,11 @@ let blackJackGame = {
 };
 const YOU = blackJackGame['you'];
 const DEALER = blackJackGame['dealer'];
-const hitSound = new Audio('swish.mp3');
-const removeSound = new Audio('Retrieve.mp3');
-const winSound = new Audio('winning.mp3');
-const losingSound = new Audio('losing.mp3');
+const hitSound = new Audio('assets/sounds/swish.mp3');
+const removeSound = new Audio('assets/sounds/Retrieve.mp3');
+const winSound = new Audio('assets/sounds/Winning.mp3');
+const losingSound = new Audio('assets/sounds/losing.mp3');
+const DrawSound = new Audio("assets/sounds/draw.mp3");
 document.querySelector("#blackjack-hit-button").addEventListener('click', blackJackHit);
 document.querySelector("#blackjack-stand-button").addEventListener('click',DealerLogic);      
 document.querySelector("#blackjack-deal-button").addEventListener('click', blackJackDeal);
@@ -27,7 +28,7 @@ function randomCard() {
 
 function showCard(card, activePlayer) {
     let cardImage = document.createElement('img');
-    cardImage.src = `${card}.jpg`;
+    cardImage.src = `assets/images/${card}.jpg`;
     hitSound.play();
     document.querySelector(activePlayer['div']).appendChild(cardImage);
 
@@ -92,7 +93,7 @@ function computeWinner(){
         winner = DEALER;
 //Condition 3 : When both dealer and user busts 
 
-        }else if(YOU['score']>20 && DEALER['score']>20){
+        }else if(YOU['score']>=20 && DEALER['score']>=20){
         console.log('You Drew');
     }
     console.log('Winner is '+ winner); 
@@ -112,9 +113,8 @@ function showResult(winner) {
     }else{
         message = "You draw";
         messagecolor = "yellow";
+        DrawSound.play();
     }
     document.querySelector("#blackjack-result").textContent=message;
-    document.querySelector("#blackjack-result").style.color=messagecolor;
-        
-
+    document.querySelector("#blackjack-result").style.color=messagecolor;        
 }
