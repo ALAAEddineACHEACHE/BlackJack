@@ -27,7 +27,7 @@ function randomCard() {
 
 function showCard(card, activePlayer) {
     let cardImage = document.createElement('img');
-    cardImage.src = `assets/images/${card}.jpg`;
+    cardImage.src = `${card}.jpg`;
     hitSound.play();
     document.querySelector(activePlayer['div']).appendChild(cardImage);
 
